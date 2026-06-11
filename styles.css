@@ -735,8 +735,18 @@ a, button {
     color: #FFFFFF !important;
 }
 
-/* Apply the soft brand cream background specifically to the footer to make it pop */
+/* Keep the footer readable with the white footer logo and contact details */
 footer, .footer-section {
-    background-color: var(--ivy-cream) !important;
+    background-color: var(--ivy-navy) !important;
     border-top: 1px solid #E2E8F0;
+}
+
+footer,
+footer a,
+footer h1,
+footer h2,
+footer h3,
+footer p,
+footer span {
+    color: #FFFFFF !important;
 }
