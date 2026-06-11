@@ -241,9 +241,17 @@
         console.log("Order complete!");
       };
 
-      function openEventbriteFallback() {
+      function openEventbriteFallback(event) {
+        if (event) {
+          event.preventDefault();
+        }
+
         if (!eventbriteWidgetReady) {
-          window.open("https://college_admissions.eventbrite.com", "_blank", "noopener");
+          window.open(
+            "https://college_admissions.eventbrite.com",
+            "eventbriteCheckout",
+            "popup,width=960,height=760,noopener"
+          );
         }
       }
 
@@ -253,6 +261,13 @@
         );
 
         if (!trigger) return;
+
+        if (!eventbriteFallbackAttached) {
+          trigger.addEventListener("click", openEventbriteFallback, {
+            once: false,
+          });
+          eventbriteFallbackAttached = true;
+        }
 
         if (window.EBWidgets && window.EBWidgets.createWidget) {
           window.EBWidgets.createWidget({
@@ -266,22 +281,15 @@
             onOrderComplete: exampleCallback,
           });
           eventbriteWidgetReady = true;
-        } else {
-          if (!eventbriteFallbackAttached) {
-            trigger.addEventListener("click", openEventbriteFallback, {
-              once: false,
-            });
-            eventbriteFallbackAttached = true;
-          }
         }
       }
 
       if (document.readyState === "loading") {
         window.addEventListener("DOMContentLoaded", function () {
-          setTimeout(initEventbriteCheckout, 1200);
+          initEventbriteCheckout();
         });
       } else {
-        setTimeout(initEventbriteCheckout, 1200);
+        initEventbriteCheckout();
       }
     </script>
     <script
