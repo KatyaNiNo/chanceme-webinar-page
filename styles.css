@@ -492,6 +492,15 @@ h4 {
   letter-spacing: -0.02em;
 }
 
+.seberson-style,
+.seberson-style h2,
+.seberson-style h3 {
+  font-family: "Playfair Display", serif;
+  font-weight: 700;
+  font-style: italic;
+  color: #1A202C;
+}
+
 .role {
   margin-bottom: 16px;
   color: var(--blue);
