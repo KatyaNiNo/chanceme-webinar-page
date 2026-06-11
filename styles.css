@@ -704,3 +704,39 @@ h4 {
     width: 74px;
   }
 }
+
+/* Define the Ivy Tutors Brand Colors */
+:root {
+  --ivy-green: #2B5B44;       /* The signature deep Ivy green */
+  --ivy-navy: #1B2D4A;        /* The premium deep navy for headers */
+  --ivy-cream: #F9F8F4;       /* The warm, off-white background used for sections */
+  --text-dark: #2D312E;       /* Soft charcoal for easy reading (not harsh pure black) */
+}
+
+/* Apply base text color globally */
+body {
+    color: var(--text-dark);
+    background-color: #FFFFFF;
+}
+
+/* Apply the premium brand navy to headings */
+h1, h2, h3 {
+    color: var(--ivy-navy) !important;
+}
+
+/* Style the links and primary buttons with the signature Ivy Green */
+a, button {
+    color: var(--ivy-green);
+}
+
+/* If there are primary buttons, give them the solid brand green background */
+.button-primary, btn-primary, button[type="submit"] {
+    background-color: var(--ivy-green) !important;
+    color: #FFFFFF !important;
+}
+
+/* Apply the soft brand cream background specifically to the footer to make it pop */
+footer, .footer-section {
+    background-color: var(--ivy-cream) !important;
+    border-top: 1px solid #E2E8F0;
+}
